@@ -1,3 +1,4 @@
+START
 WRITE "Bienvenue dans le jeu du pierre papier ciseaux"
 
 WRITE "Règle du pierre papier ciseaux...."
@@ -107,3 +108,4 @@ WHILE (quit == false) {
     }
 }
 
+END
