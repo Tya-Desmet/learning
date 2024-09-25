@@ -1,0 +1,111 @@
+START
+WRITE "Bienvenue dans le jeu du pierre papier ciseaux"
+
+WRITE "Règle du pierre papier ciseaux...."
+quit = false
+WHILE (quit == false){
+    WRITE "Entré le pseudo du joueur numéro 1"
+    INPUT player1
+
+    WRITE "Entré le pseudo du joueur numéro 2"
+    INPUT player2
+
+    WRITE player1 +  " veuillez entrez votre choix entre PIERRE, PAPIER ou CISEAUX."
+    INPUT choicePlayer1
+
+    WRITE player2 +  " veuillez entrez votre choix entre PIERRE, PAPIER ou CISEAUX."
+    INPUT choicePlayer2
+
+    IF (choicePlayer1 = PIERRE) {
+        IF (choicePlayer2 = PIERRE) {
+            WRITE "Vous avez tout les deux choisis PIERRE ! il y a donc égalité !"
+        } IF ELSE (choicePlayer2 = PAPIER){
+            WRITE  player1 + " a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player2 +" remporte donc la manche."
+        } ELSE (choicePlayer2 = CISEAUX) {
+            WRITE  player1 + " a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player1 + " remporte donc la manche." 
+        }
+
+    } IF ELSE(choicePlayer1 = PAPIER) {
+        IF(choicePlayer2 = PIERRE) { 
+            WRITE  player1 + " a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player1 + " remporte donc la manche."           
+            } IF ELSE(choicePlayer2 = PAPIER) {
+                WRITE "Vous avez tout les deux choisis PAPIER ! il y a donc égalité !"
+            } ELSE(choicePlayer2 = CISEAUX){ 
+                WRITE  player1 +" a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player2 +" remporte donc la manche."
+            }
+
+    }IF ELSE (choicePlayer1 = CISEAUX) {
+        IF (choicePlayer2 = PIERRE){
+            WRITE  player1 +" a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player2 +" remporte donc la manche."
+        }IF ELSE(choicePlayer2 = PAPIER) {
+            WRITE  player1 + " a choisi + choicePlayer1 et " + player2 + " a choisi " + choicePlayer2." + player1 + " remporte donc la manche."           
+        }ELSE(choicePlayer2 = CISEAUX) {
+                WRITE "Vous avez tout les deux choisis CISEAUX ! il y a donc égalité !"
+        } 
+    } ELSE {
+        WRITE "Il y a une erreur de saisi dans le choix de: " + player1
+    }
+     WRITE "voulez vous refaire une autre manche ? OUI OR NON ?"
+     INPUT choicePlay
+
+     IF(choicePlay == OUI){
+        BREAK
+     }
+     ELSE { 
+        quit = true
+     }
+}
+WRITE "Bienvenue dans le jeu du pierre papier ciseaux"
+
+WRITE "Règle du pierre papier ciseaux...."
+quit = false
+WHILE (quit == false) {
+    WRITE "Entrez le pseudo du joueur numéro 1"
+    INPUT player1
+
+    WRITE "Entrez le pseudo du joueur numéro 2"
+    INPUT player2
+
+    WRITE player1 + " veuillez entrer votre choix entre PIERRE, PAPIER ou CISEAUX."
+    INPUT choicePlayer1
+
+    WRITE player2 + " veuillez entrer votre choix entre PIERRE, PAPIER ou CISEAUX."
+    INPUT choicePlayer2
+
+    IF (choicePlayer1 == "PIERRE") {
+        IF (choicePlayer2 == "PIERRE") {
+            WRITE "Vous avez tous les deux choisi PIERRE ! Il y a donc égalité !"
+        } ELSE IF (choicePlayer2 == "PAPIER") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player2 + " remporte donc la manche."
+        } ELSE IF (choicePlayer2 == "CISEAUX") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player1 + " remporte donc la manche."
+        }
+    } ELSE IF (choicePlayer1 == "PAPIER") {
+        IF (choicePlayer2 == "PIERRE") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player1 + " remporte donc la manche."
+        } ELSE IF (choicePlayer2 == "PAPIER") {
+            WRITE "Vous avez tous les deux choisi PAPIER ! Il y a donc égalité !"
+        } ELSE IF (choicePlayer2 == "CISEAUX") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player2 + " remporte donc la manche."
+        }
+    } ELSE IF (choicePlayer1 == "CISEAUX") {
+        IF (choicePlayer2 == "PIERRE") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player2 + " remporte donc la manche."
+        } ELSE IF (choicePlayer2 == "PAPIER") {
+            WRITE player1 + " a choisi " + choicePlayer1 + " et " + player2 + " a choisi " + choicePlayer2 + ". " + player1 + " remporte donc la manche."
+        } ELSE IF (choicePlayer2 == "CISEAUX") {
+            WRITE "Vous avez tous les deux choisi CISEAUX ! Il y a donc égalité !"
+        }
+    } ELSE {
+        WRITE "Il y a une erreur de saisie dans le choix de: " + player1
+    }
+
+    WRITE "Voulez-vous refaire une autre manche ? OUI ou NON ?"
+    INPUT choicePlay
+
+    IF (choicePlay == "NON") {
+        quit = true
+    }
+}
+
+END
