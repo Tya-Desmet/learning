@@ -1,7 +1,7 @@
 //exercice 2  convertir une somme en euro en dollar
 
-DEBUT
-EXCHANGE_RATE 1.11 // taux de convertion le 25/09 à 21h50
+START
+EXCHANGE_RATE = 1.11 // taux de convertion le 25/09 à 21h50
 
 quit = false
 
@@ -32,4 +32,4 @@ WHILE(quit == false){
     }
 
 }
-FIN
+END
