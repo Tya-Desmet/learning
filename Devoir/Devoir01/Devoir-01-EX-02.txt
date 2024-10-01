@@ -1,7 +1,7 @@
 //exercice 2  convertir une somme en euro en dollar
 
 START
-EXCHANGE_RATE = 1.11 // taux de convertion le 25/09 à 21h50
+EXCHANGERATE = 1.11 // taux de convertion le 25/09 à 21h50
 
 quit = false
 
@@ -13,7 +13,7 @@ WHILE(quit == false){
 
     WRITE "Calcul en cours"
 
-    result = euro*EXCHANGE_RATE
+    result = euro*EXCHANGERATE
         
     WRITE "3" 
     WRITE "2" 

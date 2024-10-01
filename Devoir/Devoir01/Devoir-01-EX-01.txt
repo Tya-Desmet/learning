@@ -20,7 +20,7 @@ WHILE (quit == false) {
 
     WRITE "3" 
     WRITE "2" 
-    WRITE "1" 
+    WRITE "1
 
     WRITE "La surface de votre rectangle est de " + surface + "m²"
 
