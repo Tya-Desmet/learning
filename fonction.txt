@@ -1,0 +1,8 @@
+Function numFunction(int a, int b) {
+    somme = a + b
+    return somme;
+}
+
+pour l'appeler exemple 
+
+console.log  (numFunction(1+1));
