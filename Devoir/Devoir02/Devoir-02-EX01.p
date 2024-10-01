@@ -28,7 +28,7 @@ WHILE(!quit) {
 
     INPUT choiceUser
 
-    IF (choiceUser.toLowerCase(); == "non"){
+    IF (choiceUser.toLowerCase() == "non"){
         quit = true 
         WRITE "Fermeture du programme."
     }

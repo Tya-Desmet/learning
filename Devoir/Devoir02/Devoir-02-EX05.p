@@ -36,3 +36,6 @@ WHILE(!quit) {
 
 }
 
+CORRECTION 
+
+il existe une fonction .tri (sort) exemple les3Chiffre
