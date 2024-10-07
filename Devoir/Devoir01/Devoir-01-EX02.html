@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir 1 EX-02</title>
+</head>
+<body>
+    <script>
+        const EXCHANGERRATE = 1.11;
+        let quit = false; 
+        console.log("Bonjour user bienvenue dans notre convertisseur EURO ---> DOLLAR.");  
+
+        while(!quit){
+            let euro = prompt("Veuillez entrer votre somme en EURO.");
+
+            let result = parseInt(euro*EXCHANGERRATE);
+
+            console.log("La somme de: " + euro + "est égale à " + result + " USD");
+
+            let choiceUser = prompt("Souhaitez vous effectuer un autre calcul ? Oui ou Non ?");
+
+            if(choiceUser.toLocaleLowerCase() === "non"){
+                console.log("Fermeture du programme.");
+                quit = true;
+            }
+        }
+    </script>
+</body>
+</html>
