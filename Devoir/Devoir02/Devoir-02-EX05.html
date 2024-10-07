@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Bonjour et bienvenue dans notre système de tri des nombres");
+
+        let quit = false;
+
+        while (!quit) {
+            let choiceUserFirstNumber = Number(prompt("Entrée le premier nombre"));
+            let choiceUserSecondtNumber = Number(prompt("Entrée le second nombre"));
+            let choiceUserThirdNumber = Number(prompt("Entrée le troisième nombre"));
+
+            let les3chiffre = [choiceUserFirstNumber, choiceUserSecondtNumber, choiceUserThirdNumber];
+
+            // Utilisation de Math.max pour trouver le plus grand nombre (a voir dans mdn)
+            let largestNumber = Math.max(...les3chiffre);
+
+            console.log("Le plus grand nombre est : " + largestNumber);
+
+            let choiceQuit = prompt("Voulez-vous effectuer une nouvelle moyenne ? Oui ou Non ?");
+
+            if (choiceQuit.toLowerCase() === "non") {
+                console.log("Fermeture du programme");
+                quit = true;
+            }
+        }
+
+    </script>
+</body>
+</html>

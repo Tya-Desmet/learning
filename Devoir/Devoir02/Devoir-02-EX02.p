@@ -19,5 +19,3 @@ WHILE (userPasswordEntry != PASSWORD)
 WRITE "Le mot de passe est correct."
 
 END
-
-
