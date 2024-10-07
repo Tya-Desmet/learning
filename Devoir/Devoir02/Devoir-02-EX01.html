@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir 02 EX02</title>
+</head>
+<body>
+    <script>
+        const NUMBEROFNOTES = 3; 
+
+        console.log("Bonjour user, nous allons dans ce programme réaliser une moyenne de 3 notes");
+
+        let quit = false;
+
+        while(!quit){
+
+            let userChoiceNote1 =  parseFloat(prompt("Veuillez rentrer la note numéro 1."));
+            let userChoiceNote2 =  parseFloat(prompt("Veuillez rentrer la note numéro 2."));
+            let userChoiceNote3 =  parseFloat(prompt("Veuillez rentrer la note numéro 3."));
+
+           let result = parseFloat((userChoiceNote1 + userChoiceNote2 + userChoiceNote3) / NUMBEROFNOTES);
+           console.log("La moyenne de vos 3 notes est: " + result + ".");
+
+           let choiceQuit = prompt("Voulez vous effectuer une nouvelle moyenne ? Oui ou Non ?");
+
+           if(choiceQuit.toLowerCase() === "non"){
+            console.log("Fermeture du programe")
+            quit = true;
+           }
+        }
+    </script>
+</body>
+</html>
