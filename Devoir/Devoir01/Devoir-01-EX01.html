@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX01</title>
+</head>
+<body>
+    <script>
+
+        console.log("Bonjour user, nous allons calculer l'air d'un rectangle.");
+
+        let quit = false;
+
+        function calcul(a,b) {
+            return parseFloat( a * b);
+        }
+
+        while(!quit) {
+
+            let longeur = parseFloat(prompt("Qu'elle est la longueur de votre rectangle ?"));
+
+            console.log("Très bien ");
+
+            let largeur = parseFloat (prompt("Qu'elle est la la largeur de votre rectangle ?"));
+
+            console.log("Votre surface est de: " + calcul(longeur, largeur) + " m²");
+
+            let choiseuser = prompt("Souahitez-vous effecuer un nouveau calcul ? Oui ou Non ?");
+
+            if(choiseuser.toLowerCase() === "non"){
+                console.log("Fermeture du programme");
+                quit = true;
+            }
+        }
+    </script>
+</body>
+</html>
