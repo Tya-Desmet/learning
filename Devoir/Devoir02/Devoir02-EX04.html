@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir 2 EX04</title>
+</head>
+<body>
+    <script>
+        console.log("Verification année bisextile");
+
+        let quit = false; 
+
+        while(!quit){
+            let choiceAnneeUser = prompt("veuillez entrer une année");
+
+            if(choiceAnneeUser % 4 === 0 && (choiceAnneeUser % 100 !== 0 || choiceAnneeUser % 400 === 0)){
+                console.log("L'année " + choiceAnneeUser +" est bissextile");
+            } else {
+                console.log("L'année " + choiceAnneeUser + " n'est pas bissextile");
+            }
+
+
+            let choiceQuit = prompt("Voulez vous effectuer une nouvelle moyenne ? Oui ou Non ?");
+
+            if(choiceQuit.toLowerCase() === "non"){
+            console.log("Fermeture du programe");
+            quit = true;
+            }
+        }
+    </script>
+</body>
+</html>
