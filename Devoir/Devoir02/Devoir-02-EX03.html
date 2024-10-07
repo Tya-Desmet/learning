@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir 2 EX 03</title>
+</head>
+<body>
+    <script>
+        const REMISE100 = 5; 
+        const REMISE500 = 10; 
+
+        console.log("\x1b[36mBonjour et bienvenu dans notre programme de vérification des promotions !");
+
+        let quit = false; 
+
+        while(!quit){
+            let pannierUser = prompt("Veuillez rentrez le montant total de vos achats.");
+
+            if(pannierUser >= 100 && pannierUser < 500 ){
+                remise = parseFloat(pannierUser*REMISE100 / 100);
+                console.log("Vous avez le droit a une promotion de: " + REMISE100  +" % " + "Avec réduction le prix de vos achats reviendrons à " + (pannierUser - remise) + " €.");
+
+            } else if(pannierUser >= 500) {
+                remise = parseFloat(pannierUser*REMISE500 / 100);
+                console.log("Vous avez le droit a une promotion de: " + REMISE500  +" % " + "Avec réduction le prix de vos achats reviendrons à " + (pannierUser - remise) + " €.");
+            } else {
+                console.log("Vous n'avez pas le droit a une promotion")
+            }
+            let choiceQuit = prompt("Voulez vous effectuer une nouvelle moyenne ? Oui ou Non ?");
+
+            if(choiceQuit.toLowerCase() === "non"){
+                console.log("Fermeture du programe")
+             quit = true;
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>
