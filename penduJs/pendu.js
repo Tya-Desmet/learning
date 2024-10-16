@@ -57,36 +57,61 @@ let listedemots = [
     "origan",
     "menthe"
 ];
-while (!quit) {
-    /* 
-    * Math.random donne un nombre aleatoire entre 0 et 1 
-    * Le Math.floor arrondit le nombre
-    *  et donc on fais cela * le nombre de mots contenu dans la liste
-    */
-    let motaleatoire = listedemotsMath.floor(Math.random() * listedemots.length);
-    let motcache = "";
-    for (let i = 0; i < motaleatoire.length; i++) {
-        motcache += "_";
+function veriflettre(input) {
+    accept = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    if (accept.indexOf(input) === -1) {
+        console.log("Veuillez entrer une lettre");
+        return false;
     }
-    console.log(motcache);
-    let motuser = prompt("Quel est le mot que vous avez deviner ?");
-    while (motaleatoire !== motuser) {
-        lettre = prompt("Veuillez entrer une lettre");
-        for (let i = 0; i < motaleatoire.length; i++) {
-            if (motaleatoire[i] === lettre) {
-                motcache[i] = lettre;
+    return true;
+}
+
+while (!quit) {
+    motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
+    motscache = "";
+    for (i = 0; i < motaleatoire.length; i++) {
+        motscache += "_";
+    }
+    console.log("Devinez le mot cache qui comporte: " + motaleatoire.length + " lettre" + motscache);
+    while (motscache !== motaleatoire) {
+        userletteruse = [];
+        letteruserchoice = prompt("Veuillez rentrer une lettre");
+
+        if (!veriflettre(letteruserchoice)) {
+            console.log("Vous devez entrer une lettre");
+            continue;
+        }
+        if (userletteruse.includes(letteruserchoice)) {
+            console.log("Lettre déjà utilisée !");
+        } else {
+            userletteruse.push(letteruserchoice);
+            console.log("La lettre n'est pas utilisée.");
+            userletteruse.push(letteruserchoice);
+            for (let i = 0; i < motaleatoire.length; i++) {
+                if (motaleatoire[i] === letteruserchoice) {
+                    motscache[i] = letteruserchoice;
+                    console.log(motscache);
+                } else {
+                    console.log("La lettre n'est pas dans le mot vous perdez donc une vie" + motscache);
+                    vie -= 1;
+                    if (vie === 0) {
+                        console.log("Vous avez perdu !");
+                        break;
+                        
+                    } else {
+                        console.log("il vous reste " + vie + " vie(s)");
+                    }
+                }
             }
         }
-        console.log(motcache);
-        motuser = prompt("Quel est le mot que vous avez deviner ?");
+
     }
 
-
+    console.log("vous avez gagnez ! le mots était + motaleatoire");
     let choiceQuit = prompt("Voulez-vous jouer a nouveau ? Oui ou Non ?");
     if (choiceQuit.toLowerCase() === "non") {
         console.log("Fermeture du programme");
         quit = true;
     }
-
 }
 
