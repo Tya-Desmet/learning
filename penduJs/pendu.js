@@ -2,6 +2,7 @@
 
 console.log("Bonjour user, nous allons jouer au pendu. ");
 let quit = false;
+let vie = 7;
 let listedemots = [
     "manger",
     "poulet",
@@ -67,44 +68,54 @@ function veriflettre(input) {
 }
 
 while (!quit) {
-    motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
-    motscache = "";
+    let motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
+    let motscache = "";
+    let lettresUtilisees = [];
     for (i = 0; i < motaleatoire.length; i++) {
         motscache += "_";
     }
-    console.log("Devinez le mot cache qui comporte: " + motaleatoire.length + " lettre" + motscache);
-    while (motscache !== motaleatoire) {
-        userletteruse = [];
-        letteruserchoice = prompt("Veuillez rentrer une lettre");
 
+    console.log("Devinez le mot cache qui comporte: " + motaleatoire.length + " lettre" + motscache);
+
+    while (motscache !== motaleatoire && vie > 0) {
+        let letteruserchoice = prompt("Veuillez rentrer une lettre").toLowerCase();
+
+        //Verif si c'est une lettre
         if (!veriflettre(letteruserchoice)) {
-            console.log("Vous devez entrer une lettre");
             continue;
         }
-        if (userletteruse.includes(letteruserchoice)) {
+
+        //Verif si la lettre a été utilisé
+        if (lettresUtilisees.includes(letteruserchoice)) {
             console.log("Lettre déjà utilisée !");
-        } else {
-            userletteruse.push(letteruserchoice);
-            console.log("La lettre n'est pas utilisée.");
-            userletteruse.push(letteruserchoice);
+            continue;
+        }  
+        //Verif si la lettre est dans le mot
+        else {
+            lettresUtilisees.push(letteruserchoice);
+
+            let lettretrouver = false;
             for (let i = 0; i < motaleatoire.length; i++) {
                 if (motaleatoire[i] === letteruserchoice) {
                     motscache[i] = letteruserchoice;
-                    console.log(motscache);
-                } else {
-                    console.log("La lettre n'est pas dans le mot vous perdez donc une vie" + motscache);
-                    vie -= 1;
-                    if (vie === 0) {
-                        console.log("Vous avez perdu !");
-                        break;
-                        
-                    } else {
-                        console.log("il vous reste " + vie + " vie(s)");
-                    }
-                }
-            }
-        }
+                    lettretrouver = true;
 
+                } 
+            }
+            if (lettretrouver) {
+                console.log("Bonne lettre ! Mot actuel : " + motscache);
+            } else {
+                vie--;
+                console.log("La lettre n'est pas dans le mot. Il vous reste " + vie + " vie(s).");
+            }
+
+        }
+    }
+
+    if (motscache === motaleatoire) {
+        console.log("Vous avez gagné ! Le mot était : " + motaleatoire);
+    } else {
+        console.log("Vous avez perdu ! Le mot était : " + motscache);
     }
 
     console.log("vous avez gagnez ! le mots était + motaleatoire");
