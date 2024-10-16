@@ -1,127 +1,97 @@
-console.log("Bonjour utilisateur, nous allons jouer au pendu. ");
-let quitter = false;
-let vie = 7;
+// Ce jeu du pendu permet à l'utilisateur de deviner des mots cachés dans une liste prédéfinie
+
+// Liste des mots cachés à deviner
 let listeMots = [
-    "manger",
-    "poulet",
-    "poisson",
-    "chat",
-    "oiseau",
-    "soleil",
-    "pluie",
-    "neige",
-    "fleur",
-    "arbre",
-    "maison",
-    "voiture",
-    "bicyclette",
-    "piscine",
-    "plage",
-    "mer",
-    "montagne",
-    "riviere",
-    "lac",
-    "foret",
-    "champs",
-    "vigne",
-    "fromage",
-    "pain",
-    "vin",
-    "biere",
-    "frites",
-    "coca",
-    "pepsi",
-    "soda",
-    "eau",
-    "jus",
-    "cafe",
-    "the",
-    "sucre",
-    "sel",
-    "poivre",
-    "huile",
-    "vinaigre",
-    "moutarde",
-    "piment",
-    "paprika",
-    "curry",
-    "gingembre",
-    "cannelle",
-    "cloudegirolle",
-    "cumin",
-    "coriandre",
-    "thym",
-    "persil",
-    "basilic",
-    "origan",
-    "menthe"
+    "mangue", "noix", "abricot", "banane", "pamplemousse", "orange",
+    "poivre", "sel", "sucre", "farine", "eau", "lait", "fromage", "jus",
+    "vin", "biere", "cafe", "pain", "croissant", "chocolat",
+    "fraise", "citron", "kiwi", "pomme", "poire", "cassis",
+    "cerise", "framboise", "mure", "asperge", "brocolis",
+    "choux", "carotte", "poivron", "oignon", "ail", "epinard", "salade",
+    "tomate", "concombre", "courgette", "aubergine", "piment", "patate",
+    "betterave", "radis", "haricot", "lentille", "pois", "riz", "semoule",
+    "oeuf", "jambon", "saucisse", "steak", "poulet", "veau", "agneau",
+    "poisson", "crevette", "mouton", "boeuf", "lapin", "chevre", "canard",
+    "pigeon", "faisan", "perdrix", "tortue", "oiseau", "hirondelle",
+    "aigle", "faucon", "corbeau", "tourterelle", "perroquet", "poule",
+    "coq", "vache", "cheval", "mouton", "chien", "chat", "abeille",
+    "fourmi", "araignee", "souris", "rat", "lion", "tigre", "ours",
+    "singe", "gorille", "elephant", "hippopotame", "crocodile",
+    "serpent", "grenouille", "crapaud"
 ];
 
+// Fonction pour vérifier si une lettre est valide
 function verifLettre(input) {
-    let accepter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    if (accepter.indexOf(input) === -1) {
-        console.log("Veuillez entrer une lettre");
-        return false;
-    }
-    return true;
+    const accepter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    return accepter.includes(input);
 }
 
-while (!quitter) {
-    let motAleatoire = listeMots[Math.floor(Math.random() * listeMots.length)];
-    let motCacheStr = "";
-    let lettresUtilisees = [];
-    vie = 7;
-    
-    for (i = 0; i < motAleatoire.length; i++) {
-        motCacheStr += "_";
-    }
-    let motCache = motCacheStr.split("");
-    console.log("Devinez le mot caché qui comporte: " + motAleatoire.length + " lettre" + motCache);
+// Variable pour contrôler l'état du jeu
+let quitter = false;
 
+// Boucle principale du jeu
+while (!quitter) {
+    
+    // Sélection aléatoire d'un mot à deviner
+    let motAleatoire = listeMots[Math.floor(Math.random() * listeMots.length)];
+    
+    // Initialisation des variables pour le jeu
+    let motCache = Array(motAleatoire.length).fill("_");
+    let lettresUtilisees = [];
+    let vie = 7;
+
+    // Affichage du mot caché à deviner et de la longueur du mot
+    console.log("Devinez le mot caché qui comporte: " + motAleatoire.length + " lettres. Mot: " + motCache.join(" "));
+
+    // Boucle pour deviner les lettres du mot caché
     while (motCache.join("") !== motAleatoire && vie > 0) {
+        // Demande à l'utilisateur de saisir une lettre
         let lettreUtilisateurChoix = prompt("Veuillez rentrer une lettre").toLowerCase();
 
-        //Verif si c'est une lettre
+        // Vérifier si c'est une lettre valide
         if (!verifLettre(lettreUtilisateurChoix)) {
+            console.log("Veuillez entrer une lettre valide.");
             continue;
         }
 
-        //Verif si la lettre a été utilisée
+        // Vérifier si la lettre a déjà été utilisée
         if (lettresUtilisees.includes(lettreUtilisateurChoix)) {
-            console.log("Lettre déjà utilisée !");
+            console.log("Lettre déjà utilisée : " + lettresUtilisees.join(", "));
             continue;
-        }  
-        //Verif si la lettre est dans le mot
-        else {
-            lettresUtilisees.push(lettreUtilisateurChoix);
+        }
 
-            let lettreTrouver = false;
-            for (let i = 0; i < motAleatoire.length; i++) {
-                if (motAleatoire[i] === lettreUtilisateurChoix) {
-                    motCache[i] = lettreUtilisateurChoix;
-                    lettreTrouver = true;
+        // Ajouter la lettre à la liste des lettres utilisées
+        lettresUtilisees.push(lettreUtilisateurChoix);
+        let lettreTrouver = false;
 
-                } 
+        // Vérifier si la lettre est présente dans le mot caché
+        for (let i = 0; i < motAleatoire.length; i++) {
+            if (motAleatoire[i] === lettreUtilisateurChoix) {
+                motCache[i] = lettreUtilisateurChoix;
+                lettreTrouver = true;
             }
-            if (lettreTrouver) {
-                console.log("Bonne lettre ! Mot actuel : " + motCache);
-                if (motCache.join("") === motAleatoire) {
-                    break;
-                }
-            } else {
-                vie--;
-                console.log("La lettre n'est pas dans le mot. Il vous reste " + vie + " vie(s).");
-            }
+        }
 
+        // Afficher le résultat de la lettre trouvée ou non
+        if (lettreTrouver) {
+            console.log("Bonne lettre ! Mot actuel : " + motCache.join(" "));
+            if (motCache.join("") === motAleatoire) {
+                console.log("Vous avez gagné ! Le mot était : " + motAleatoire);
+                break; // Sortir de la boucle si le mot a été trouvé
+            }
+        } else {
+            vie--;
+            console.log("La lettre n'est pas dans le mot. Il vous reste " + vie + " vie(s).");
         }
     }
 
-    if (motCache.join("") === motAleatoire) {
-        console.log("Vous avez gagné ! Le mot était : " + motAleatoire);
-    } else {
+    // Afficher le résultat du jeu (victoire ou défaite)
+    if (vie === 0) {
         console.log("Vous avez perdu ! Le mot était : " + motAleatoire);
     }
-    let choixQuitter = prompt("Voulez-vous jouer a nouveau ? Oui ou Non ?");
+
+    // Demander à l'utilisateur s'il veut jouer à nouveau
+    let choixQuitter = prompt("Voulez-vous jouer à nouveau ? Oui ou Non ?");
     if (choixQuitter.toLowerCase() === "non") {
         console.log("Fermeture du programme");
         quitter = true;
