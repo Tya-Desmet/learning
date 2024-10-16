@@ -59,7 +59,7 @@ let listedemots = [
     "menthe"
 ];
 function veriflettre(input) {
-    accept = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let accept = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     if (accept.indexOf(input) === -1) {
         console.log("Veuillez entrer une lettre");
         return false;
@@ -71,7 +71,7 @@ while (!quit) {
     let motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
     let motscacheStr = "";
     let lettresUtilisees = [];
-    vie += 7;
+    vie = 7;
     
     for (i = 0; i < motaleatoire.length; i++) {
         motscacheStr += "_";
@@ -107,7 +107,6 @@ while (!quit) {
             if (lettretrouver) {
                 console.log("Bonne lettre ! Mot actuel : " + motscache);
                 if (motscache.join("") === motaleatoire) {
-                    console.log("Vous avez gagnez !");
                     break;
                 }
             } else {
