@@ -3,8 +3,6 @@
 console.log("Bonjour user, nous allons jouer au pendu. ");
 let quit = false;
 let vie = 7;
-let listedemots = ["abc", "efg"]
-/*
 let listedemots = [
     "manger",
     "poulet",
@@ -60,7 +58,6 @@ let listedemots = [
     "origan",
     "menthe"
 ];
-*/
 function veriflettre(input) {
     accept = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     if (accept.indexOf(input) === -1) {
@@ -74,6 +71,7 @@ while (!quit) {
     let motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
     let motscacheStr = "";
     let lettresUtilisees = [];
+    vie += 7;
     
     for (i = 0; i < motaleatoire.length; i++) {
         motscacheStr += "_";
@@ -81,7 +79,7 @@ while (!quit) {
     let motscache = motscacheStr.split("");
     console.log("Devinez le mot cache qui comporte: " + motaleatoire.length + " lettre" + motscache);
 
-    while (motscache !== motaleatoire && vie > 0) {
+    while (motscache.join("") !== motaleatoire && vie > 0) {
         let letteruserchoice = prompt("Veuillez rentrer une lettre").toLowerCase();
 
         //Verif si c'est une lettre
@@ -108,7 +106,7 @@ while (!quit) {
             }
             if (lettretrouver) {
                 console.log("Bonne lettre ! Mot actuel : " + motscache);
-                if (motscache === motaleatoire) {
+                if (motscache.join("") === motaleatoire) {
                     console.log("Vous avez gagnez !");
                     break;
                 }
@@ -120,7 +118,7 @@ while (!quit) {
         }
     }
 
-    if (motscache === motaleatoire) {
+    if (motscache.join("") === motaleatoire) {
         console.log("Vous avez gagné ! Le mot était : " + motaleatoire);
     } else {
         console.log("Vous avez perdu ! Le mot était : " + motaleatoire);
