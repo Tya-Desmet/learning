@@ -1,9 +1,7 @@
-
-
-console.log("Bonjour user, nous allons jouer au pendu. ");
-let quit = false;
+console.log("Bonjour utilisateur, nous allons jouer au pendu. ");
+let quitter = false;
 let vie = 7;
-let listedemots = [
+let listeMots = [
     "manger",
     "poulet",
     "poisson",
@@ -58,55 +56,56 @@ let listedemots = [
     "origan",
     "menthe"
 ];
-function veriflettre(input) {
-    let accept = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    if (accept.indexOf(input) === -1) {
+
+function verifLettre(input) {
+    let accepter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    if (accepter.indexOf(input) === -1) {
         console.log("Veuillez entrer une lettre");
         return false;
     }
     return true;
 }
 
-while (!quit) {
-    let motaleatoire = listedemots[Math.floor(Math.random() * listedemots.length)];
-    let motscacheStr = "";
+while (!quitter) {
+    let motAleatoire = listeMots[Math.floor(Math.random() * listeMots.length)];
+    let motCacheStr = "";
     let lettresUtilisees = [];
     vie = 7;
     
-    for (i = 0; i < motaleatoire.length; i++) {
-        motscacheStr += "_";
+    for (i = 0; i < motAleatoire.length; i++) {
+        motCacheStr += "_";
     }
-    let motscache = motscacheStr.split("");
-    console.log("Devinez le mot cache qui comporte: " + motaleatoire.length + " lettre" + motscache);
+    let motCache = motCacheStr.split("");
+    console.log("Devinez le mot caché qui comporte: " + motAleatoire.length + " lettre" + motCache);
 
-    while (motscache.join("") !== motaleatoire && vie > 0) {
-        let letteruserchoice = prompt("Veuillez rentrer une lettre").toLowerCase();
+    while (motCache.join("") !== motAleatoire && vie > 0) {
+        let lettreUtilisateurChoix = prompt("Veuillez rentrer une lettre").toLowerCase();
 
         //Verif si c'est une lettre
-        if (!veriflettre(letteruserchoice)) {
+        if (!verifLettre(lettreUtilisateurChoix)) {
             continue;
         }
 
-        //Verif si la lettre a été utilisé
-        if (lettresUtilisees.includes(letteruserchoice)) {
+        //Verif si la lettre a été utilisée
+        if (lettresUtilisees.includes(lettreUtilisateurChoix)) {
             console.log("Lettre déjà utilisée !");
             continue;
         }  
         //Verif si la lettre est dans le mot
         else {
-            lettresUtilisees.push(letteruserchoice);
+            lettresUtilisees.push(lettreUtilisateurChoix);
 
-            let lettretrouver = false;
-            for (let i = 0; i < motaleatoire.length; i++) {
-                if (motaleatoire[i] === letteruserchoice) {
-                    motscache[i] = letteruserchoice;
-                    lettretrouver = true;
+            let lettreTrouver = false;
+            for (let i = 0; i < motAleatoire.length; i++) {
+                if (motAleatoire[i] === lettreUtilisateurChoix) {
+                    motCache[i] = lettreUtilisateurChoix;
+                    lettreTrouver = true;
 
                 } 
             }
-            if (lettretrouver) {
-                console.log("Bonne lettre ! Mot actuel : " + motscache);
-                if (motscache.join("") === motaleatoire) {
+            if (lettreTrouver) {
+                console.log("Bonne lettre ! Mot actuel : " + motCache);
+                if (motCache.join("") === motAleatoire) {
                     break;
                 }
             } else {
@@ -117,15 +116,15 @@ while (!quit) {
         }
     }
 
-    if (motscache.join("") === motaleatoire) {
-        console.log("Vous avez gagné ! Le mot était : " + motaleatoire);
+    if (motCache.join("") === motAleatoire) {
+        console.log("Vous avez gagné ! Le mot était : " + motAleatoire);
     } else {
-        console.log("Vous avez perdu ! Le mot était : " + motaleatoire);
+        console.log("Vous avez perdu ! Le mot était : " + motAleatoire);
     }
-    let choiceQuit = prompt("Voulez-vous jouer a nouveau ? Oui ou Non ?");
-    if (choiceQuit.toLowerCase() === "non") {
+    let choixQuitter = prompt("Voulez-vous jouer a nouveau ? Oui ou Non ?");
+    if (choixQuitter.toLowerCase() === "non") {
         console.log("Fermeture du programme");
-        quit = true;
+        quitter = true;
     }
 }
 
