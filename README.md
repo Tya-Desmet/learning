@@ -1,4 +1,4 @@
-# learning
+## learning
 Apprentissage du développement Front-end avec différentes spécificité.
 ## Authors
 
@@ -11,6 +11,9 @@ Apprentissage du développement Front-end avec différentes spécificité.
 
 Il sert a apprendre différents aspect du developpement front-end
 
-#### Qu'est ce qui va si trouver ?
+## Qu'est ce que cela contient ?
 
-Actuellement, de l’algorithmie et des tests Git/GitHub spécifiques pour reprendre l’outil en main via Visual Studio Code sans ligne de commande
+- git/Github
+- Algorithmique
+- Html
+- JS
