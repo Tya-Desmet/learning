@@ -1,0 +1,33 @@
+.rainbow{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.R {
+color: rgba(0, 255,255,0.);
+}
+
+.A {
+    color: blue;
+}
+
+.I {
+    color: green;
+}
+
+.N {
+    color: yellow;
+}
+
+.B {
+    color: cyan;
+}
+
+.O {
+    color: purple;
+}
+
+.W {    
+    color: greenyellow;
+    }

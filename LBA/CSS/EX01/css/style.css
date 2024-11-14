@@ -1,0 +1,41 @@
+#R {
+    color: blue;
+}
+
+#A {
+    color: green;
+}
+
+#I {
+    color: rgb(176, 221, 254);
+}
+
+#N {
+    color: yellow;
+}
+
+#B {
+    color: cyan;
+}
+
+#O {
+    color: purple;
+}
+
+#W {
+    color: greenyellow;
+}
+
+#rainbow{
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 50px;
+    font-weight: bold;
+}

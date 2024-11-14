@@ -1,0 +1,45 @@
+.violet{
+    background-color: rgb(191, 121, 191);
+    width: 100vw;
+    height: 100vh;
+}
+.red{
+    background-color: red;
+    width: 50%;
+    height: 50%;
+}
+
+.green{
+    background-color: green;
+    width: 50%;
+    height: 50%;
+}
+
+.blue{
+    background-color: blue;
+    width: 50%;
+    height: 50%;
+
+}
+
+@media (min-width: 1024px) {
+    .red{
+        background-color: red;
+        width: 25%;
+        height: 25%;
+    }
+    
+    .green{
+        background-color: green;
+        width: 25%;
+        height: 25%;
+    }
+    
+    .blue{
+        background-color: blue;
+        width: 25%;
+        height: 25%;
+    
+    }
+    
+}
