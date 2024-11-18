@@ -1,16 +1,25 @@
-.termani a {
+/* Mon conteneur principale */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*temani "header" */
+.temani a {
     font-family: "alex+brush", cursive;
     font-weight: 400;
     font-style: normal;
 }
-.termani span {
+.temani span {
     color: gray;
 }
 
-.termani {
+.temani {
     font-size: 0.8em;
 }
 
+/* global */
 h1 {
     font-family: "DynaPuff", cursive;
     font-weight: 400;
@@ -18,14 +27,8 @@ h1 {
     font-size: 2rem;
 }
 
-.summary {
-    color: red;
-}
-
-.parag1 {
-    font-family: "courgette", cursive;
-    color: rgb(200, 200, 200);
-    font-weight: 200;
+a {
+    text-decoration: none;
 }
 
 p {
@@ -33,22 +36,19 @@ p {
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-li::marker {
-    color: red;
-  }
-
-
-.divbutton {
+.info{
+    background-color: rgb(246, 246,246 );
     display: inline-block;
-
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
+
+
+
+/* Les boutons */
 .button {
     text-decoration: none;
     color: rgb(22, 78, 3);
@@ -66,29 +66,52 @@ li::marker {
     background-color: rgba(214, 244, 232, 0.30);
 }
 
+/* Les listes */
+li::marker {
+    color: red;
+}
+
+/* Les conteneurs */
+
+
+.divbutton {
+    display: inline-block;
+}
+
+
+
+/* Les marges */
+
 .marge {
     margin-top: 20px;
     height: 5px;
     background-color: rgb(232, 232, 232);
 }
 
+hr {
+    margin-top: 40px;
+}
+
+/* le logo YK */
 .logos {
     display: inline-block;
     vertical-align: middle;
 }
 
+/* Les textes */
 .textemaj{
     background-color: rgb(255, 242, 233);
     font-family: monospace;
 }
 
-.menu{
-    background-color: rgb(246, 246,246 );
-    display: inline-block;
-    font-size: 15px;
-    padding: 8px;
-    border-radius: 8px;
-    margin-bottom: 15px;
 
 
+.parag1 {
+    font-family: "courgette", cursive;
+    color: rgb(200, 200, 200);
+    font-weight: 200;
+}
+
+.summary {
+    color: red;
 }
