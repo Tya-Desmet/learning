@@ -1,0 +1,47 @@
+.box{
+    height: 550px;
+    width: 450px;
+    background-color: #3498db;
+    border: #000000 solid 5px;
+}
+
+.conteneur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.conteneur > :nth-child(1){
+    background-color: #e74c3c;
+}
+
+.conteneur > :last-child{
+    background-color: #2ecc71;
+}
+
+.logo{
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box :nth-child(2) {
+    order: -1;
+}
+
+@media screen and (max-width: 800px) {
+    .conteneur{
+        flex-direction: column-reverse;
+    }
+    
+}

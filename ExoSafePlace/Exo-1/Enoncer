@@ -1,0 +1,15 @@
+1- Crée une BOX de 450px de largeur et 550px de hauteur et ajouter lui un fond de couleur.
+
+2 - centrer la box au centre de l'écran
+
+3 - Ajouter 2 box et choisissez 2 couleurs différentes de la première en utilisant les selecteurs
+
+4 - Ajouter un écart entre les box de 20px et ajouter un contour similaire sur les 3 box
+
+5- Dans chaque Box Ajouter un titre, une image (de 64px en rond) représentant le titre, et une description
+
+6- Inversion titre et logo en CSS
+
+7- Lorsque l'écran se réduit placer les box les une en dessous des autres.
+
+8- Placer la box tout en dessous pour la mettre tout au dessus (utiliser le responsive si maitriser )
