@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+
+
+.dae{
+    width: 50VW;
+    height: 50VH;
+}
+
+.droite{
+    background-color: rgb(132, 121, 255);
+    width: 50VW;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50VH;
+}   
+
+.conteneur{
+    display: flex;
+}
+
+.menu, .droite h1, .droite h2, .droite p{
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+
+.droite h1, .droite h2, .droite p{
+    color: aliceblue;
+}
+
+.menu ol{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-top: 20px;
+    
+}
+
+.menu a{
+    text-decoration: none;
+    background-color: rgb(170, 170, 170);
+    padding: 10px;
+}
+

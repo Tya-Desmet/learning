@@ -1,0 +1,24 @@
+*{
+    margin : 0;
+    padding: 0;
+}
+
+.logo img{
+    width: 200px;
+}
+
+.conteneur{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ol{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.text{
+    margin-right: 20px;
+}
